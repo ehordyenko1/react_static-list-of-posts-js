@@ -2,7 +2,7 @@ import { CommentInfo } from '../CommentInfo/CommentInfo';
 
 export const CommentList = ({ comments }) => {
   if (comments.length <= 0) {
-    <b data-cy="NoCommentsMessage">No comments yet</b>;
+    return <b data-cy="NoCommentsMessage">No comments yet</b>;
   }
 
   return (

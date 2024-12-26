@@ -2,23 +2,16 @@ import { UserInfo } from '../UserInfo/UserInfo';
 import { CommentList } from '../CommentList/CommentList';
 
 export const PostInfo = ({ post }) => {
-  <div className="PostInfo">
-    <div className="PostInfo__header">
-      <h3 className="PostInfo__title">{post.title}</h3>
+  return (
+    <div className="PostInfo">
+      <div className="PostInfo__header">
+        <h3 className="PostInfo__title">{post.title}</h3>
+        <UserInfo user={post.user} />
+      </div>
 
-      <p>
-        {' Posted by  '}
+      <p className="PostInfo__body">{post.body}</p>
 
-        <a className="UserInfo" href="mailto:Sincere@april.biz">
-          <UserInfo user={post.user} />
-        </a>
-      </p>
+      <CommentList comments={post.comment} />
     </div>
-
-    <p className="PostInfo__body">{post.body}</p>
-
-    <hr />
-
-    <CommentList comments={post.comment} />
-  </div>;
+  );
 };
